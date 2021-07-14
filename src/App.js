@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
-import axios from "axios";
+import dummyData from './data/dummy-data';
 
 function App() {
-  axios.get();
+
+  const clickButton = () => {
+    alert("Kamu memilih lagu");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App-header">
+      <div className="container">
+        <h1>My Playlist</h1>
+        <div className="card">
+          <img src={dummyData.album.images[1].url} />
+          <p id="title">{dummyData.album.name}</p>
+          <p id="artist">{dummyData.album.artists[0].name}</p>
+          <p id="album">{dummyData.album.album_type}</p>
+          <button id="btn-select" onClick={clickButton}>Select</button>
+        </div>
+      </div>
     </div>
   );
 }
