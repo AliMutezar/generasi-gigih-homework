@@ -1,5 +1,5 @@
 import './App.css';
-import dummyData from './data/dummy-data';
+import Songs from './components/track';
 
 function App() {
 
@@ -12,10 +12,7 @@ function App() {
       <div className="container">
         <h1>My Playlist</h1>
         <div className="card">
-          <img src={dummyData.album.images[1].url} />
-          <p id="title">{dummyData.album.name}</p>
-          <p id="artist">{dummyData.album.artists[0].name}</p>
-          <p id="album">{dummyData.album.album_type}</p>
+          <Songs />
           <button id="btn-select" onClick={clickButton}>Select</button>
         </div>
       </div>
